@@ -32,8 +32,7 @@ function attemptLogin() {
     ];
     
     const isValid = validCredentials.some(cred => {
-        return cred.user === username.toLowerCase() && 
-               cred.pass === password.toLowerCase();
+        return cred.user === username && cred.pass === password;
     });
     
     if (isValid) {
