@@ -28,7 +28,7 @@ function attemptLogin() {
     
     // Dark entities verification
     const validCredentials = [
-        { user: "h00810", pass: "Xv]{gxy~uj86!bC" }
+        { user: "h00810", pass: "epNKZpO1jqrjnAT" }
     ];
     
     const isValid = validCredentials.some(cred => {
