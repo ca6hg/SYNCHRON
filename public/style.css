@@ -1,0 +1,241 @@
+/* Game thumbnail styles */
+.game-thumb {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 2px solid var(--blood);
+    box-shadow: 0 0 10px #8a030333;
+    border-radius: 8px;
+    background: #222;
+    transition: filter 0.2s;
+}
+.game-thumb:hover {
+    filter: brightness(1.2);
+}
+.unavailable-thumb {
+    background: linear-gradient(135deg, #222 60%, #444 100%);
+    border: 2px dashed #444;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: relative;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+/* Trailer modal overlay styles */
+#trailer-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+#trailer-modal iframe {
+    border: 2px solid var(--blood);
+    box-shadow: 0 0 20px #8a030333;
+    background: #111;
+    border-radius: 6px;
+}
+#trailer-modal button {
+    background: var(--blood);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #8a030333;
+}
+/* Make the TERMINATE button smaller in width */
+.terminate-small {
+    min-width: 80px;
+    max-width: 120px;
+    width: 100px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 0.95em;
+}
+/* Base Horror Theme */
+:root {
+    --blood: #8a0303;
+    --glitch1: #0ff;
+    --glitch2: #f0f;
+    --dark: #0a0a0a;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #0f0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    text-shadow: 0 0 5px #0f03;
+}
+
+/* CRT Effect */
+.crt-effect {
+    position: relative;
+}
+
+.crt-effect::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0,0,0,0) 50%, 
+        rgba(0,0,0,0.25) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Login Box */
+#login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+
+.login-box {
+    background: rgba(10,10,10,0.9);
+    border: 1px solid var(--blood);
+    border-radius: 3px;
+    padding: 2rem;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px #8a030333;
+    animation: flicker 0.01s infinite alternate;
+}
+
+.login-box h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.glitch-input {
+    width: 100%;
+    padding: 0.5rem;
+    background: #111;
+    border: 1px solid #333;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+}
+
+.glitch-btn {
+    width: 100%;
+    padding: 0.5rem;
+    background: var(--blood);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#login-error {
+    color: var(--blood);
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+}
+
+.occult-symbol {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+/* Main content */
+#main-content {
+    display: none;
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--blood);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#corruption-level, #session-timer {
+    color: var(--blood);
+    font-size: 0.9rem;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.nav-bar button {
+    flex: 1;
+    padding: 0.5rem;
+    background: #111;
+    border: 1px solid #333;
+    color: #0f0;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+}
+
+.content-section {
+    display: none;
+}
+
+/* Animations */
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Add these styles to your CSS */
+.media-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.media-container img, 
+.media-container video {
+    max-width: 100%;
+    border: 1px solid var(--blood);
+    box-shadow: 0 0 10px #8a030333;
+}
+
+/* Add some glitch effect on hover */
+.media-container img:hover,
+.media-container video:hover {
+    filter: brightness(1.1);
+    animation: glitch-effect 0.5s infinite;
+}

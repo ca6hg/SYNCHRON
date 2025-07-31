@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>///SYNCHRON_TERMINATED///</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt-effect">
+    <!-- Login screen -->
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>ACCESS</h2>
+            <div class="input-wrapper">
+                <input type="text" id="login-username" placeholder="SACRIFICE ID" class="glitch-input">
+            </div>
+            <div class="input-wrapper">
+                <input type="password" id="login-password" placeholder="BLOOD CODE" class="glitch-input">
+            </div>
+            <button onclick="attemptLogin()" class="glitch-btn">INITIATE</button>
+            <p id="login-error">✖ ACCESS DENIED ✖</p>
+            <div class="occult-symbol">✹</div>
+        </div>
+    </div>
+    
+    <!-- Main terminal -->
+    <div id="main-content">
+        <header>
+            <div id="corruption-level">CORRUPTION: <span id="corruption-value">0%</span></div>
+            <div id="session-timer"> LOG OUT: <span id="timer-value">05:00</span></div>
+        </header>
+        
+        <nav class="nav-bar">
+            <button onclick="showSection('games')">OUR GAMES</button>
+            <button onclick="showSection('decrypt')">DECRYPTION</button>
+            <button onclick="showSection('about')">ABOUT</button>
+            <button onclick="logout()" class="danger terminate-small">TERMINATE</button>
+        </nav>
+
+        <div id="games" class="content-section" style="display:none">
+    <h2>OUR GAMES</h2>
+    <div class="media-container" style="flex-direction:row; justify-content:center; gap:2rem;">
+        <img src="game1.png" alt="Game screenshot" id="game-image" class="game-thumb" style="cursor:pointer" onclick="showTrailer()">
+        <div class="game-thumb unavailable-thumb" onclick="showUnavailable('Not available')"></div>
+        <div class="game-thumb unavailable-thumb" onclick="showUnavailable('Not available')"></div>
+    </div>
+    <!-- Trailer modal overlay -->
+    <div id="trailer-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:2000; justify-content:center; align-items:center;">
+        <div style="position:relative; width:80vw; max-width:700px; margin:auto;">
+            <button onclick="closeTrailer()" style="position:absolute; top:-40px; right:0; background:var(--blood); color:#fff; border:none; font-size:1.5rem; padding:0.5rem 1rem; cursor:pointer;">✖</button>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/1EhXicUe37s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!-- Unavailable modal -->
+    <div id="unavailable-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:2100; justify-content:center; align-items:center;">
+        <div style="position:relative; width:400px; margin:auto; background:#111; border:2px solid #333; border-radius:8px; box-shadow:0 0 20px #333; padding:2rem; text-align:center; color:#888; font-size:2rem;">
+            <button onclick="closeUnavailable()" style="position:absolute; top:-40px; right:0; background:var(--blood); color:#fff; border:none; font-size:1.5rem; padding:0.5rem 1rem; cursor:pointer;">✖</button>
+            <span id="unavailable-text">Not available</span>
+        </div>
+    </div>
+</div>
+        
+        <div id="decrypt" class="content-section">
+            <h2>OUR CODEX</h2>
+            <textarea id="codeInput" placeholder="ENTER CURSED TEXT..."></textarea>
+            <button id="login-btn" class="glitch-btn">INITIATE</button>
+            <div id="result" class="output-glitch"></div>
+        </div>
+        
+        <div id="about" class="content-section" style="display:none">
+            <h2>LAST TRANSMISSION</h2>
+            <div class="warning-box">
+                <p>✧ 10/31/1987 - FINAL LOG ENTRY ✧</p>
+                <p>THEY CAME</p>
+                <p>CAN HEAR</p>
+                <p>THEM SEE</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
