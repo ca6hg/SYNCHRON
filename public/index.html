@@ -86,9 +86,9 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="lenyegtelen.js"></script>
     <script>
-      // Fallback: ha a main.js nem töltődik be, a login gomb hibát dob
+      
       if (typeof attemptLogin !== 'function') {
         document.getElementById('login-btn').onclick = function() {
           var err = document.getElementById('login-error');
@@ -99,4 +99,5 @@
       }
     </script>
 </body>
+
 </html>
