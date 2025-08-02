@@ -12,25 +12,13 @@
         <div class="login-box">
             <h2>ACCESS</h2>
             <div style="display:none">//\u004B\u0045\u0052\u0045\u0053\u0044\u0020\u0041\u005A\u0020\u0055\u004A\u0053\u0041\u0047\u004F\u0054</div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
-            <div class="dummy"></div>
+            <div style="display:none">//\u004B\u0045\u0052\u0045\u0053\u0044\u0020\u0041\u005A\u0020\u0055\u004A\u0053\u0041\u0047\u004F\u0054</div>
+            <div style="display:none">//\u004B\u0045\u0052\u0045\u0053\u0044\u0020\u0041\u005A\u0020\u0055\u004A\u0053\u0041\u0047\u004F\u0054</div>
+            <div style="display:none">//\u004B\u0045\u0052\u0045\u0053\u0044\u0020\u0041\u005A\u0020\u0055\u004A\u0053\u0041\u0047\u004F\u0054</div>
+            <div style="display:none">//\u004B\u0045\u0052\u0045\u0053\u0044\u0020\u0041\u005A\u0020\u0055\u004A\u0053\u0041\u0047\u004F\u0054</div>
+            <div style="display:none">//\u004B\u0045\u0052\u0045\u0053\u0044\u0020\u0041\u005A\u0020\u0055\u004A\u0053\u0041\u0047\u004F\u0054</div>
+            <div style="display:none">//\u004B\u0045\u0052\u0045\u0053\u0044\u0020\u0041\u005A\u0020\u0055\u004A\u0053\u0041\u0047\u004F\u0054</div>
+            <div style="display:none">//\u004B\u0045\u0052\u0045\u0053\u0044\u0020\u0041\u005A\u0020\u0055\u004A\u0053\u0041\u0047\u004F\u0054</div>
             <div class="input-wrapper">
                 <input type="text" id="login-username" placeholder="ID" class="glitch-input">
             </div>
@@ -98,6 +86,17 @@
         </div>
     </div>
 
-    <script src="main.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      // Fallback: ha a main.js nem töltődik be, a login gomb hibát dob
+      if (typeof attemptLogin !== 'function') {
+        document.getElementById('login-btn').onclick = function() {
+          var err = document.getElementById('login-error');
+          err.textContent = '✖ WRONG PASSWORD ✖';
+          err.style.display = 'block';
+          setTimeout(function() { err.style.display = 'none'; }, 3000);
+        };
+      }
+    </script>
 </body>
 </html>
