@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(res => res.json())
                 .then(data => {
-                    showDecryptModal(data.result || 'Nincs eredmény.');
+                    showDecryptModal(data.result || 'NOTHING FOUND');
                 })
                 .catch(() => {
-                    showDecryptModal('Szerverhiba!');
+                    showDecryptModal('SERVER ERROR');
                 });
             });
         }
@@ -229,5 +229,6 @@ function logout() {
     updateCorruptionDisplay();
     updateTimerDisplay();
 }
+
 
 
