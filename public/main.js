@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (decryptBtn && codeInput) {
             decryptBtn.addEventListener('click', function() {
                 const text = codeInput.value;
-                fetch('https://serverargadminweb.onrender.com/api/decrypt', {
+                fetch('https://serversynchron.onrender.com/api/decrypt', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ text })
@@ -66,7 +66,7 @@ function attemptLogin() {
     const errorElement = document.getElementById('login-error');
     
     // Backend login ellenőrzés
-    fetch('https://serverargadminweb.onrender.com/api/login', {
+    fetch('https://serversynchron.onrender.com/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -229,6 +229,7 @@ function logout() {
     updateCorruptionDisplay();
     updateTimerDisplay();
 }
+
 
 
 
