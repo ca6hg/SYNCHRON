@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (decryptBtn && codeInput) {
             decryptBtn.addEventListener('click', function() {
                 const text = codeInput.value;
-                fetch('http://localhost:3001/api/decrypt', {
+                fetch('https://serverargadminweb.onrender.com/api/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ text })
@@ -229,3 +229,4 @@ function logout() {
     updateCorruptionDisplay();
     updateTimerDisplay();
 }
+
